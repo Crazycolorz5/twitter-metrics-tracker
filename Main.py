@@ -56,10 +56,11 @@ for i in range(minutesToRun): #TODO: Replace with number on minutes to run for.
     trackedStatuses = set(map(lambda x: x[1], trackingStatuses))
     newTweets = dict()
     for status in timelineTweets:
-        if status in ignoreTweets or status in trackedStatuses:
+        statusID = status['id']
+        if statusID in ignoreTweets or statusID in trackedStatuses:
             continue
         else:
-            newTweets[status['id']] = status
+            newTweets[statusID] = status
     
     for tweet in newTweets:
         # twitter API only allows 900 calls per 15 minutes, which equates to following 60 tweets.

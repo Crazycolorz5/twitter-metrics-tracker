@@ -34,7 +34,6 @@ for i in range(minutesToRun): #TODO: Replace with number on minutes to run for.
     nextTime = prevTime + 60
     
     nextStatuses = set()
-    print("Getting data for time %d." % prevTime)
     
     #Get data for all statuses we're tracking. 
     for (timeAdded, statusID) in trackingStatuses:
@@ -73,7 +72,6 @@ for i in range(minutesToRun): #TODO: Replace with number on minutes to run for.
     
     trackingStatuses = nextStatuses
     curTime = time()
-    print("prevTime: %d, nextTime: %d, curTime: %d" % (prevTime, nextTime, curTime))
     sleep(max(nextTime - curTime, 0))
 
 for tweet in statusData:

@@ -43,7 +43,7 @@ for i in range(minutesToRun): #TODO: Replace with number on minutes to run for.
         statusData[statusID].append((favorites, retweets))
         
         # For each status, finalize the data and stop tracking it if sufficiently late.
-        if prevTime - timeAdded > 2.5 * 60: #60 * 60 * 24 * 3:
+        if prevTime - timeAdded > 60 * 60 * 24 * 3:
             outputTweet(statusID, statusData[statusID])
             del statusData[statusID]
         else: # Otherwise continue tracking it

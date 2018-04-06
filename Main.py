@@ -74,7 +74,10 @@ if __name__ == "__main__":
             trackedStatuses = set(map(lambda x: x[1], trackingStatuses))
             newTweets = dict()
             for status in timelineTweets:
-                statusID = status['id']
+                try: 
+                    statusID = status['id']
+                except Exception:
+                    continue
                 if statusID in ignoreTweets or statusID in trackedStatuses:
                     continue
                 else:

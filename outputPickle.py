@@ -11,6 +11,6 @@ def outputTweet(id, data):
 
 if __name__ == "__main__":
 	with open('data.pickle', 'rb') as f:
-		data = pickle.load(f)
+		data = load(f)
 	for tweet in data:
 		outputTweet(tweet, data[tweet])
